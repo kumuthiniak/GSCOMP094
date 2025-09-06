@@ -6,4 +6,4 @@ services:
     container_name: backend2_app
     ports:
       - "8080:8080"
-    image: kumuthini2026/todo:latest
+    image: kumuthini2026/test:latest
