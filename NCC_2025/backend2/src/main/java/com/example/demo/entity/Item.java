@@ -1,71 +1,43 @@
 package com.example.demo.entity;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 import java.time.LocalDate;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import lombok.Data;
-
 @Entity
-@Data
 public class Item {
 
-
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;  // <-- primary key
-
     private String itemCode;
-
-    private String itemName;
-
     private Double unitPrice;
-
     private LocalDate updatedDate;
 
-    // Constructors
     public Item() {}
 
-    public Item(String itemCode, Double unitPrice, LocalDate updatedDate,String itemName) {
+    public Item(String itemCode, Double unitPrice, LocalDate updatedDate) {
         this.itemCode = itemCode;
         this.unitPrice = unitPrice;
         this.updatedDate = updatedDate;
-        this.itemName=itemName;
     }
 
-
-    public String getItemCode() {
+    // Getters and setters
+    public String getItemCode() { 
         return itemCode;
-    }
-
+     }
     public void setItemCode(String itemCode) {
-        this.itemCode = itemCode;
-    }
-    
-    public String getItemName() {
-        return itemName;
-    }
+         this.itemCode = itemCode;
+         }
 
-    public void setItemName(String itemName) {
-        this.itemName = itemName;
+    public Double getUnitPrice() { 
+        return unitPrice; 
     }
-
-    public Double getUnitPrice() {
-        return unitPrice;
-    }
-
     public void setUnitPrice(Double unitPrice) {
-        this.unitPrice = unitPrice;
-    }
+         this.unitPrice = unitPrice;
+         }
 
     public LocalDate getUpdatedDate() {
-        return updatedDate;
-    }
-
-    public void setUpdatedDate(LocalDate updatedDate) {
-        this.updatedDate = updatedDate;
+         return updatedDate;
+         }
+    public void setUpdatedDate(LocalDate updatedDate) { 
+        this.updatedDate = updatedDate; 
     }
 }
-
-
